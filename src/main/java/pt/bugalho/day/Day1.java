@@ -6,14 +6,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Day1 {
-    private static File file;
+public class Day1 extends BaseDay{
     private static final List<Integer> leftSide = new ArrayList<>();
     private static final List<Integer> rightSide = new ArrayList<>();
 
-    public static void run() {
-        ClassLoader classLoader = Main.class.getClassLoader();
-        file = new File(Objects.requireNonNull(classLoader.getResource("day1.input")).getFile());
+    public Day1(String fileName) {
+        super(fileName);
+    }
+
+    @Override
+    public void run() {
         part1();
         part2();
     }
